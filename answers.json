@@ -1,0 +1,38 @@
+{
+    "icon": {
+        "question1": {
+            "a"     : "Annie",
+            "b"     : "Renekton",
+            "c"     : "Caitlyn",
+            "d"     : "Diana",
+            "answer": "a"
+        },
+        "question2": {
+            "a"     : "Skarner",
+            "b"     : "Darius",
+            "c"     : "Azir",
+            "d"     : "Thresh",
+            "answer": "c"
+        }
+    },
+
+    "voiceline": {
+        "question1": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        }
+    },
+
+    "ability": {
+        "question1": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        }
+    }
+}
