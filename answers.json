@@ -13,11 +13,131 @@
             "c"     : "Azir",
             "d"     : "Thresh",
             "answer": "c"
+        },
+        "question3": {
+            "a"     : "Kaisa",
+            "b"     : "Zeri",
+            "c"     : "Nilah",
+            "d"     : "Gwen",
+            "answer": "c"
+        },
+        "question4": {
+            "a"     : "Rek'sai",
+            "b"     : "Kassadin",
+            "c"     : "Chogath",
+            "d"     : "Kha'zix",
+            "answer": "a"
+        },
+        "question5": {
+            "a"     : "Ivern",
+            "b"     : "Zyra",
+            "c"     : "Maokai",
+            "d"     : "Zac",
+            "answer": "b"
+        },
+        "question6": {
+            "a"     : "Thresh",
+            "b"     : "Mordekaiser",
+            "c"     : "Senna",
+            "d"     : "Yorick",
+            "answer": "d"
+        },
+        "question7": {
+            "a"     : "Lissandra",
+            "b"     : "Ashe",
+            "c"     : "Sejuani",
+            "d"     : "Trundle",
+            "answer": "d"
+        },
+        "question8": {
+            "a"     : "Zoe",
+            "b"     : "Soraka",
+            "c"     : "Seraphine",
+            "d"     : "Sona",
+            "answer": "b"
+        },
+        "question9": {
+            "a"     : "Sion",
+            "b"     : "Darius",
+            "c"     : "Ornn",
+            "d"     : "Garen",
+            "answer": "a"
+        },
+        "question10": {
+            "a"     : "Rammus",
+            "b"     : "Malphite",
+            "c"     : "Gnar",
+            "d"     : "Taliyah",
+            "answer": "c"
         }
+        
     },
 
     "voiceline": {
         "question1": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question2": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question3": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question4": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question5": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question6": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question7": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question8": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question9": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question10": {
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -28,6 +148,69 @@
 
     "ability": {
         "question1": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question2": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question3": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question4": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question5": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question6": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question7": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question8": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question9": {
+            "a"     : "placeholder",
+            "b"     : "placeholder",
+            "c"     : "placeholder",
+            "d"     : "placeholder",
+            "answer": "a"
+        },
+        "question10": {
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
