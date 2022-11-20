@@ -75,79 +75,80 @@
 
     "voiceline": {
         "question1": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Thresh",
+            "b"     : "Volibear",
+            "c"     : "Vladimir",
+            "d"     : "Aatrox",
+            "answer": "d"
         },
         "question2": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
+            "a"     : "Camille",
+            "b"     : "Caitlyn",
+            "c"     : "Fiora",
+            "d"     : "Evelynn",
             "answer": "a"
         },
         "question3": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
+            "a"     : "Hecarim",
+            "b"     : "Thresh",
+            "c"     : "Yorick",
+            "d"     : "Mordekaiser",
             "answer": "a"
         },
         "question4": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Pyke",
+            "b"     : "Shaco",
+            "c"     : "Jayce",
+            "d"     : "Jhin",
+            "answer": "d"
         },
         "question5": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Xayah",
+            "b"     : "Sejuani",
+            "c"     : "Katarina",
+            "d"     : "Leona",
+            "answer": "c"
         },
         "question6": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Samira",
+            "b"     : "Nilah",
+            "c"     : "Soraka",
+            "d"     : "Zoe",
+            "answer": "b"
         },
         "question7": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
+            "a"     : "Rell",
+            "b"     : "Poppy",
+            "c"     : "Qiyana",
+            "d"     : "Morgana",
             "answer": "a"
         },
         "question8": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Graves",
+            "b"     : "Malphite",
+            "c"     : "Rammus",
+            "d"     : "Galio",
+            "answer": "b"
         },
         "question9": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Thresh",
+            "b"     : "Veigar",
+            "c"     : "Sion",
+            "d"     : "Xerath",
+            "answer": "d"
         },
         "question10": {
-            "a"     : "placeholder",
-            "b"     : "placeholder",
-            "c"     : "placeholder",
-            "d"     : "placeholder",
-            "answer": "a"
+            "a"     : "Trundle",
+            "b"     : "Draven",
+            "c"     : "Tryndamere",
+            "d"     : "Renekton",
+            "answer": "c"
         }
     },
 
     "ability": {
         "question1": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -155,6 +156,7 @@
             "answer": "a"
         },
         "question2": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -162,6 +164,7 @@
             "answer": "a"
         },
         "question3": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -169,6 +172,7 @@
             "answer": "a"
         },
         "question4": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -176,6 +180,7 @@
             "answer": "a"
         },
         "question5": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -183,6 +188,7 @@
             "answer": "a"
         },
         "question6": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -190,6 +196,7 @@
             "answer": "a"
         },
         "question7": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -197,6 +204,7 @@
             "answer": "a"
         },
         "question8": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -204,6 +212,7 @@
             "answer": "a"
         },
         "question9": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
@@ -211,6 +220,7 @@
             "answer": "a"
         },
         "question10": {
+            "name"  : "placeholder",
             "a"     : "placeholder",
             "b"     : "placeholder",
             "c"     : "placeholder",
