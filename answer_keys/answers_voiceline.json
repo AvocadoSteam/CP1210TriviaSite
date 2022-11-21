@@ -1,0 +1,72 @@
+[
+  {"question": 1,
+  "a"        : "Thresh",
+  "b"        : "Volibear",
+  "c"        : "Vladimir",
+  "d"        : "Aatrox",
+  "answer"   : "d"
+  },
+  {"question2":2,
+  "a"         : "Camille",
+  "b"         : "Caitlyn",
+  "c"         : "Fiora",
+  "d"         : "Evelynn",
+  "answer"    : "a"
+  },
+  {"question": 3,
+  "a"        : "Hecarim",
+  "b"        : "Thresh",
+  "c"        : "Yorick",
+  "d"        : "Mordekaiser",
+  "answer"   : "a"
+  },
+  {"question": 4,
+  "a"        : "Pyke",
+  "b"        : "Shaco",
+  "c"        : "Jayce",
+  "d"        : "Jhin",
+  "answer"   : "d"
+  },
+  {"question": 5,
+  "a"        : "Xayah",
+  "b"        : "Sejuani",
+  "c"        : "Katarina",
+  "d"        : "Leona",
+  "answer"   : "c"
+  },
+  {"question": 6,
+  "a"        : "Samira",
+  "b"        : "Nilah",
+  "c"        : "Soraka",
+  "d"        : "Zoe",
+  "answer"   : "b"
+  },
+  {"question":7,
+  "a"        : "Rell",
+  "b"        : "Poppy",
+  "c"        : "Qiyana",
+  "d"        : "Morgana",
+  "answer"   : "a"
+  },
+  {"question": 8,
+  "a"        : "Graves",
+  "b"        : "Malphite",
+  "c"        : "Rammus",
+  "d"        : "Galio",
+  "answer"   : "b"
+  },
+  {"question": 9,
+  "a"        : "Thresh",
+  "b"        : "Veigar",
+  "c"        : "Sion",
+  "d"        : "Xerath",
+  "answer"   : "d"
+  },
+  {"question": 10,
+  "a"        : "Trundle",
+  "b"        : "Draven",
+  "c"        : "Tryndamere",
+  "d"        : "Renekton",
+  "answer"   : "c"
+  }
+]

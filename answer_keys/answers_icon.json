@@ -1,0 +1,72 @@
+[
+  {"question": 1,
+  "a"        : "Annie",
+  "b"        : "Renekton",
+  "c"        : "Caitlyn",
+  "d"        : "Diana",
+  "answer"   : "a"
+  },
+  {"question": 2,
+  "a"        : "Skarner",
+  "b"        : "Darius",
+  "c"        : "Azir",
+  "d"        : "Thresh",
+  "answer"   : "c"
+  },
+  {"question": 3,
+  "a"        : "Kaisa",
+  "b"        : "Zeri",
+  "c"        : "Nilah",
+  "d"        : "Gwen",
+  "answer"   : "c"
+  },
+  {"question": 4,
+  "a"        : "Rek'sai",
+  "b"        : "Kassadin",
+  "c"        : "Chogath",
+  "d"        : "Kha'zix",
+  "answer"   : "a"
+  },
+  {"question": 5,
+  "a"        : "Ivern",
+  "b"        : "Zyra",
+  "c"        : "Maokai",
+  "d"        : "Zac",
+  "answer"   : "b"
+  },
+  {"question": 6,
+  "a"        : "Thresh",
+  "b"        : "Mordekaiser",
+  "c"        : "Senna",
+  "d"        : "Yorick",
+  "answer"   : "d"
+  },
+  {"question": 7,
+  "a"        : "Lissandra",
+  "b"        : "Ashe",
+  "c"        : "Sejuani",
+  "d"        : "Trundle",
+  "answer"   : "d"
+  },
+  {"question": 8,
+  "a"        : "Zoe",
+  "b"        : "Soraka",
+  "c"        : "Seraphine",
+  "d"        : "Sona",
+  "answer"   : "b"
+  },
+  {"question": 9,
+  "a"        : "Sion",
+  "b"        : "Darius",
+  "c"        : "Ornn",
+  "d"        : "Garen",
+  "answer"   : "a"
+  },
+  {"question": 10,
+  "a"        : "Rammus",
+  "b"        : "Malphite",
+  "c"        : "Gnar",
+  "d"        : "Taliyah",
+  "answer"   : "c"
+  }
+]

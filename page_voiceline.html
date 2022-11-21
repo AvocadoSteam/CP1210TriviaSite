@@ -7,36 +7,47 @@
                 background-color: blanchedalmond;
                 text-align: center;
             }
+            #navDiv {
+                color: black;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap.css">
         <title>A Trivia Website | Guess by Voiceline</title>
     </head>
 
     <body>
-        <script src="script.js"></script>
+        <!-- importing all scripts -->
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="./answer_keys/answers_voiceline.json"></script>
         <script src="js/bootstrap.js"></script>
-    </body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="page_ability.html">Ability Name Trivia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="page_main.html">Action Icon Trivia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="page_voiceline.html">Champion Voice-line Trivia</a>
-                    </li>
-
-                </ul>
-            </div>
+        <!-- navigation bar, taken from boostraps website -->
+        <div id="navDiv">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="page_ability.html">Ability Name Trivia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page_main.html">Action Icon Trivia</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="page_voiceline.html">Champion Voice-line Trivia</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
+
+        <!-- content -->
+        <h1>Testing</h1>
+
+    </body>
 </html>
