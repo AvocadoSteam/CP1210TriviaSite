@@ -10,6 +10,21 @@
             #navDiv {
                 color: black;
             }
+            .header {
+                text-align: center;
+
+            }
+            #question { /* Where the question for the user will go */
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                padding-top: 20px;
+            }
+            #source { /* Where the source to guess on will go */
+                text-align: center;
+                border-color: blue;
+                padding-top: 100px;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap.css">
         <title>A Trivia Website | Guess by Icon</title>
@@ -21,33 +36,14 @@
         <script type="text/javascript" src="./answer_keys/answers_icon.json"></script>
         <script src="js/bootstrap.js"></script>
 
-        <!-- navigation bar, taken from boostraps website -->
-        <div id="navDiv">
-            <nav class="navbar navbar-expand-lg bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="page_ability.html">Ability Name Trivia</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="page_main.html">Action Icon Trivia</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="page_voiceline.html">Champion Voice-line Trivia</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
         <!-- content -->
-        <h1>Testing</h1>
+        <h1 class="header">League of Legends Trivia</h1>
+        <h3 class="header">Guess a champion by Icon, Voiceline, or Ability name!</h3>
+
+        <div id="source">
+            <img width="100" height="100" src="/media/icons/q1.webp" alt="">
+        </div>
+        <p id="question">this is where the question should go</p>
 
     </body>
 </html>
