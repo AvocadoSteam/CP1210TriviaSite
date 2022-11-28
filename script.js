@@ -6,11 +6,17 @@ const validateAnswer = () => {
 
     console.log(Object.values(parsed)[1]); // access second question answers
     console.log(parsed["question2"]); // same as above
-
 }
 
 const selectNextQuestion = () => {
     console.log("placeholder");
+}
+
+const keepScore = () => {
+    let correctGuesses = 0;
+    let totalGuesses = 0;
+    // if guess = true, correctGuesses++
+    totalGuesses++;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
