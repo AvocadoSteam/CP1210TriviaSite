@@ -2,6 +2,7 @@ const $ = selector => document.querySelector(selector);
 
 const validateAnswer = () => {
     console.log("testing"); // test to see if clicking a button works
+    console.log(JSON.parse(ICON_TEST));
 }
 
 
@@ -10,20 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
     $(".selections").addEventListener("click", validateAnswer);
 
     // all icon answers
-    const iconAnswers = JSON.parse(icon_answers);
-    for (let i = 0; i <= 10; i++) {
+    const iconAnswers = JSON.parse(ICON_ANSWERS);
+    for (let i = 0; i < 10; i++) {
         console.log(iconAnswers[i]);
     };
 
     // all voiceline answers
-    const voicelineAnswers = JSON.parse(icon_answers);
-    for (let i = 0; i <= 10; i++) {
+    const voicelineAnswers = JSON.parse(VOICELINE_ANSWERS);
+    for (let i = 0; i < 10; i++) {
         console.log(voicelineAnswers[i]);
     }
 
 })
 
-const icon_answers = '[\n' +
+const ICON_TEST = '{' +
+    '"question1": [' +
+    '"Annie", "Renekton", "Caitlyn", "Diana", "a"]' +
+    '}'
+
+const ICON_ANSWERS = '[\n' +
     '  {"question": 1,\n' +
     '  "a"        : "Annie",\n' +
     '  "b"        : "Renekton",\n' +
@@ -96,7 +102,7 @@ const icon_answers = '[\n' +
     '  }\n' +
     ']';
 
-const voiceline_answers = '[\n' +
+const VOICELINE_ANSWERS = '[\n' +
     '  {"question": 1,\n' +
     '  "a"        : "Thresh",\n' +
     '  "b"        : "Volibear",\n' +
