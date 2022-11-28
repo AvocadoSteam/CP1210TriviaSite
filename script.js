@@ -1,15 +1,14 @@
 const $ = selector => document.querySelector(selector);
 
-const validateAnswer = () => {
-    console.log("testing"); // test to see if clicking a button works
-    const parsed = JSON.parse(ICON_TEST);
-
-    console.log(Object.values(parsed)[1]); // access second question answers
-    console.log(parsed["question2"]); // same as above
-}
-
 const selectNextQuestion = () => {
-    console.log("placeholder");
+    let category = Math.floor(Math.random() * 2); // 0, 1 or 2
+    if (category === 0) {
+        console.log(category);
+    } else if (category === 1) {
+        console.log(category);
+    } else if (category === 2) {
+        console.log(category);
+    }
 }
 
 const keepScore = () => {
@@ -17,23 +16,24 @@ const keepScore = () => {
     let totalGuesses = 0;
     // if guess = true, correctGuesses++
     totalGuesses++;
+    let updateContent = correctGuesses + " / " + totalGuesses;
+    $("#score").textContent=updateContent;
+}
+
+const validateAnswer = () => {
+    console.log("testing"); // test to see if clicking a button works
+    const parsed = JSON.parse(ICON_ANSWERS);
+
+    console.log(Object.values(parsed)[1]); // access second question answers
+    console.log(parsed["question1"]); // access first question answers
+
+    keepScore();
+    selectNextQuestion();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 
     $(".selections").addEventListener("click", validateAnswer);
-
-    // all icon answers
-    const iconAnswers = JSON.parse(ICON_ANSWERS);
-    for (let i = 0; i < 10; i++) {
-        console.log(iconAnswers[i]);
-    };
-
-    // all voiceline answers
-    const voicelineAnswers = JSON.parse(VOICELINE_ANSWERS);
-    for (let i = 0; i < 10; i++) {
-        console.log(voicelineAnswers[i]);
-    }
 
 })
 
@@ -48,7 +48,7 @@ const ICON_ANSWERS = '{' +
     '"Rek\'sai", "Kassadin", "Cho\'gath", "Kha\'zix", "a"],' +
     '"question5": [' +
     '"Ivern", "Zyra", "Maokai", "Zac", "b"],' +
-    '"question6: [' +
+    '"question6": [' +
     '"Thresh", "Mordekaiser", "Senna", "Yorick", "d"],' +
     '"question7": [' +
     '"Lissandra", "Ashe", "Sejuani", "Trundle", "d"],' +
