@@ -1,16 +1,25 @@
+const $ = selector => document.querySelector(selector);
+
+const validateAnswer = () => {
+    console.log("testing"); // test to see if clicking a button works
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("Placeholder");
-    // data = '[{"name" : "Ashwin", "age" : "20"},{"name" : "Abhinandan", "age" : "20"}]';
-    // data = JSON.parse("/answers.json");
-    let q1 = '[{"a" : "Annie","b" : "Renekton","c": "Caitlyn","d": "Diana","answer": "a"}]';
-    // console.log(q1)
+    $(".selections").addEventListener("click", validateAnswer);
 
-
-    const testData = JSON.parse(icon_answers);
+    // all icon answers
+    const iconAnswers = JSON.parse(icon_answers);
     for (let i = 0; i <= 10; i++) {
-        console.log(testData[i]);
+        console.log(iconAnswers[i]);
     };
+
+    // all voiceline answers
+    const voicelineAnswers = JSON.parse(icon_answers);
+    for (let i = 0; i <= 10; i++) {
+        console.log(voicelineAnswers[i]);
+    }
 
 })
 
@@ -86,3 +95,76 @@ const icon_answers = '[\n' +
     '  "answer"   : "c"\n' +
     '  }\n' +
     ']';
+
+const voiceline_answers = '[\n' +
+    '  {"question": 1,\n' +
+    '  "a"        : "Thresh",\n' +
+    '  "b"        : "Volibear",\n' +
+    '  "c"        : "Vladimir",\n' +
+    '  "d"        : "Aatrox",\n' +
+    '  "answer"   : "d"\n' +
+    '  },\n' +
+    '  {"question2":2,\n' +
+    '  "a"         : "Camille",\n' +
+    '  "b"         : "Caitlyn",\n' +
+    '  "c"         : "Fiora",\n' +
+    '  "d"         : "Evelynn",\n' +
+    '  "answer"    : "a"\n' +
+    '  },\n' +
+    '  {"question": 3,\n' +
+    '  "a"        : "Hecarim",\n' +
+    '  "b"        : "Thresh",\n' +
+    '  "c"        : "Yorick",\n' +
+    '  "d"        : "Mordekaiser",\n' +
+    '  "answer"   : "a"\n' +
+    '  },\n' +
+    '  {"question": 4,\n' +
+    '  "a"        : "Pyke",\n' +
+    '  "b"        : "Shaco",\n' +
+    '  "c"        : "Jayce",\n' +
+    '  "d"        : "Jhin",\n' +
+    '  "answer"   : "d"\n' +
+    '  },\n' +
+    '  {"question": 5,\n' +
+    '  "a"        : "Xayah",\n' +
+    '  "b"        : "Sejuani",\n' +
+    '  "c"        : "Katarina",\n' +
+    '  "d"        : "Leona",\n' +
+    '  "answer"   : "c"\n' +
+    '  },\n' +
+    '  {"question": 6,\n' +
+    '  "a"        : "Samira",\n' +
+    '  "b"        : "Nilah",\n' +
+    '  "c"        : "Soraka",\n' +
+    '  "d"        : "Zoe",\n' +
+    '  "answer"   : "b"\n' +
+    '  },\n' +
+    '  {"question":7,\n' +
+    '  "a"        : "Rell",\n' +
+    '  "b"        : "Poppy",\n' +
+    '  "c"        : "Qiyana",\n' +
+    '  "d"        : "Morgana",\n' +
+    '  "answer"   : "a"\n' +
+    '  },\n' +
+    '  {"question": 8,\n' +
+    '  "a"        : "Graves",\n' +
+    '  "b"        : "Malphite",\n' +
+    '  "c"        : "Rammus",\n' +
+    '  "d"        : "Galio",\n' +
+    '  "answer"   : "b"\n' +
+    '  },\n' +
+    '  {"question": 9,\n' +
+    '  "a"        : "Thresh",\n' +
+    '  "b"        : "Veigar",\n' +
+    '  "c"        : "Sion",\n' +
+    '  "d"        : "Xerath",\n' +
+    '  "answer"   : "d"\n' +
+    '  },\n' +
+    '  {"question": 10,\n' +
+    '  "a"        : "Trundle",\n' +
+    '  "b"        : "Draven",\n' +
+    '  "c"        : "Tryndamere",\n' +
+    '  "d"        : "Renekton",\n' +
+    '  "answer"   : "c"\n' +
+    '  }\n' +
+    ']'

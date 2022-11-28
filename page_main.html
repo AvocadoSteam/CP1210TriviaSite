@@ -14,11 +14,18 @@
                 text-align: center;
 
             }
+            .selections {
+                text-align: center;
+            }
             #question { /* Where the question for the user will go */
                 text-align: center;
                 font-size: 18px;
                 font-weight: bold;
                 padding-top: 20px;
+            }
+            #choices {
+                text-align: center;
+                font-size: 15px;
             }
             #source { /* Where the source to guess on will go */
                 text-align: center;
@@ -44,6 +51,14 @@
             <img width="100" height="100" src="/media/icons/q1.webp" alt="">
         </div>
         <p id="question">this is where the question should go</p>
+
+        <!-- all possible choices -->
+        <div id="choices">
+            <button type="button" class="selections" onclick="">A) answer</button>
+            <button type="button" class="selections" onclick="">B) answer</button>
+            <button type="button" class="selections" onclick="">C) answer</button>
+            <button type="button" class="selections" onclick="">D) answer</button>
+        </div>
 
     </body>
 </html>
