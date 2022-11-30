@@ -1,9 +1,31 @@
 const $ = selector => document.querySelector(selector);
 
+const testCreatingQuestionListing = () => {
+    let questionList = []; // place to add questions
+    let count = 12; // 12 questions to choose
+    let parsedIcons = JSON.parse(ICON_ANSWERS);
+    let parsedVoicelines = JSON.parse(VOICELINE_ANSWERS);
+    let parsedAbility = JSON.parse(ABILITY_ANSWERS);
+
+    for (let i = 0; i < count; count--) { // adds icon answers
+        let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
+        questionList.push(Object.values(parsedIcons)[randomSelection]);
+    }
+    for (let i = 0; i < count; count--) { // adds voiceline answers
+        let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
+        questionList.push(Object.values(parsedVoicelines)[randomSelection]);
+    }
+    for (let i = 0; i < count; count--) { // adds ability answers
+        let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
+        questionList.push(Object.values(parsedAbility)[randomSelection]);
+    }
+    console.log(questionList);
+}
+
 const selectNextQuestion = () => {
-    let category = Math.floor(Math.random() * 2); // 0, 1 or 2
+    let category = Math.floor(Math.random() * 3); // 0, 1 or 2
     if (category === 0) {
-        console.log(category);
+
     } else if (category === 1) {
         console.log(category);
     } else if (category === 2) {
@@ -34,6 +56,7 @@ const validateAnswer = () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     $(".selections").addEventListener("click", validateAnswer);
+    testCreatingQuestionListing();
 
 })
 
