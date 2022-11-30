@@ -2,20 +2,21 @@ const $ = selector => document.querySelector(selector);
 
 const testCreatingQuestionListing = () => {
     let questionList = []; // place to add questions
-    let count = 12; // 12 questions to choose
+    let count = 4; // 12 questions to choose
     let parsedIcons = JSON.parse(ICON_ANSWERS);
     let parsedVoicelines = JSON.parse(VOICELINE_ANSWERS);
     let parsedAbility = JSON.parse(ABILITY_ANSWERS);
+    //TODO put values inside of VOICELINE and ABILITY answers
 
-    for (let i = 0; i < count; count--) { // adds icon answers
+    for (let i = 0; i < count; i++) { // adds icon answers
         let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
         questionList.push(Object.values(parsedIcons)[randomSelection]);
     }
-    for (let i = 0; i < count; count--) { // adds voiceline answers
+    for (let i = 0; i < count; i++) { // adds voiceline answers
         let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
         questionList.push(Object.values(parsedVoicelines)[randomSelection]);
     }
-    for (let i = 0; i < count; count--) { // adds ability answers
+    for (let i = 0; i < count; i++) { // adds ability answers
         let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
         questionList.push(Object.values(parsedAbility)[randomSelection]);
     }
