@@ -2,6 +2,9 @@
 <html>
     <head>
         <style>
+
+            <!--  CNA Test  -->
+
             .navBar {
                 border: 2px solid black;
                 background-color: blanchedalmond;
@@ -10,8 +13,16 @@
             #navDiv {
                 color: black;
             }
+
+            #logo {
+                url(/media/logos/1200px-League_of_Legends_2019_vector.svg.png);
+            }
+
             .header {
+                font-family: Friz Quadrata, serif;
+                background-color: blanchedalmond;
                 text-align: center;
+                padding-top: 20px;
 
             }
             .selections {
@@ -53,7 +64,8 @@
         <script src="js/bootstrap.js"></script>
 
         <!-- content -->
-        <h1 class="header">League of Legends Trivia</h1>
+        <h1 class="header"><strong>League of Legends Trivia</strong></h1>
+        <h2><img width="300" height="114.5" src="/media/logos/1200px-League_of_Legends_2019_vector.svg.png" alt=""></h2>
         <h3 class="header">Guess a champion by Icon, Voiceline, or Ability name!</h3>
 
         <div id="source">
@@ -63,10 +75,10 @@
 
         <!-- all possible choices -->
         <div id="choices">
-            <button type="button" class="selections" id="A" onclick="">A) answer</button>
-            <button type="button" class="selections" id="B" onclick="">B) answer</button>
-            <button type="button" class="selections" id="C" onclick="">C) answer</button>
-            <button type="button" class="selections" id="D" onclick="">D) answer</button>
+            <button type="button" class="btn btn-outline-warning" id="A" onclick=""><strong>A) answer</strong></button>
+            <button type="button" class="btn btn-outline-warning" id="B" onclick=""><strong>B) answer</strong></button>
+            <button type="button" class="btn btn-outline-warning" id="C" onclick=""><strong>C) answer</strong></button>
+            <button type="button" class="btn btn-outline-warning" id="D" onclick=""><strong>D) answer</strong></button>
         </div>
 
         <h4 style="text-align: center;padding-top:40px;">Score:</h4>
