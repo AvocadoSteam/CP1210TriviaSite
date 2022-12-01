@@ -29,18 +29,26 @@ const CreatingQuestionListing = () => {
 }
 
 const updateQuestion = () => {
-    let questionList = CreatingQuestionListing();
+    let questionList = firstQuestion;
     questionList.shift();
     return questionList;
 }
 
 const keepScore = () => {
-    let correctGuesses = 0;
-    let totalGuesses = 0;
-    // if (guess = true) {
-    //     correctGuesses++;
-    // }
+    let questionCount = 0; // make global
+    let correctGuesses = 0; // make global
+    let totalGuesses = 0; // make global
+    if ($("#A").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    } else if ($("#B").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    } else if ($("#C").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    } else if ($("#D").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    }
     totalGuesses++;
+    questionCount++;
     let updateContent = correctGuesses + " / " + totalGuesses;
     $("#score").textContent=updateContent;
 }
@@ -54,8 +62,6 @@ const validateAnswer = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    let firstQuestion = CreatingQuestionListing();
-
     $("#question").textContent="What champ has this ability?";
     $("#A").textContent=firstQuestion[0][0];
     $("#B").textContent=firstQuestion[0][1];
@@ -68,25 +74,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const ICON_ANSWERS = '{' +
     '"question1": [' +
-    '"Annie", "Renekton", "Caitlyn", "Diana", "a"],' +
+    '"Annie", "Renekton", "Caitlyn", "Diana", "Annie"],' +
     '"question2": [' +
-    '"Skarner", "Darius", "Azir", "Thresh", "c"],' +
+    '"Skarner", "Darius", "Azir", "Thresh", "Azir"],' +
     '"question3": [' +
-    '"Kai\'sa", "Zeri", "Nilah", "Gwen", "c"],' +
+    '"Kai\'sa", "Zeri", "Nilah", "Gwen", "Nilah"],' +
     '"question4": [' +
-    '"Rek\'sai", "Kassadin", "Cho\'gath", "Kha\'zix", "a"],' +
+    '"Rek\'sai", "Kassadin", "Cho\'gath", "Kha\'zix", "Rek\'sai"],' +
     '"question5": [' +
-    '"Ivern", "Zyra", "Maokai", "Zac", "b"],' +
+    '"Ivern", "Zyra", "Maokai", "Zac", "Zyra"],' +
     '"question6": [' +
-    '"Thresh", "Mordekaiser", "Senna", "Yorick", "d"],' +
+    '"Thresh", "Mordekaiser", "Senna", "Yorick", "Yorick"],' +
     '"question7": [' +
-    '"Lissandra", "Ashe", "Sejuani", "Trundle", "d"],' +
+    '"Lissandra", "Ashe", "Sejuani", "Trundle", "Trundle"],' +
     '"question8": [' +
-    '"Zoe", "Soraka", "Seraphine", "Sona", "b"],' +
+    '"Zoe", "Soraka", "Seraphine", "Sona", "Soraka"],' +
     '"question9": [' +
-    '"Sion", "Darius", "Ornn", "Garen", "a"],' +
+    '"Sion", "Darius", "Ornn", "Garen", "Sion"],' +
     '"question10": [' +
-    '"Rammus", "Malphite", "Gnar", "Taliyah", "c"]' +
+    '"Rammus", "Malphite", "Gnar", "Taliyah", "Gnar"]' +
     '}';
 
 const VOICELINE_ANSWERS = '{' +
@@ -134,3 +140,5 @@ const ABILITY_ANSWERS = '{' +
     '"question10": [' +
     ']' +
     '}';
+
+const firstQuestion = CreatingQuestionListing();
