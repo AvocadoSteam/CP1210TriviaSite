@@ -1,6 +1,6 @@
 const $ = selector => document.querySelector(selector);
 
-const testCreatingQuestionListing = () => {
+const CreatingQuestionListing = () => {
     let questionList = []; // place to add questions
     let count = 4; // 12 questions to choose
     let parsedIcons = JSON.parse(ICON_ANSWERS);
@@ -9,35 +9,37 @@ const testCreatingQuestionListing = () => {
     //TODO put values inside of VOICELINE and ABILITY answers
 
     for (let i = 0; i < count; i++) { // adds icon answers
-        let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
+        let randomSelection = Math.floor(Math.random() * 10) + 1; // select out of 10 questions
         questionList.push(Object.values(parsedIcons)[randomSelection]);
+        delete parsedIcons[randomSelection];
     }
+    count = 4;
     for (let i = 0; i < count; i++) { // adds voiceline answers
-        let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
+        let randomSelection = Math.floor(Math.random() * 10) + 1; // select out of 10 questions
         questionList.push(Object.values(parsedVoicelines)[randomSelection]);
+        delete parsedVoicelines[randomSelection];
     }
+    couint = 4;
     for (let i = 0; i < count; i++) { // adds ability answers
-        let randomSelection = Math.floor(Math.random() * 11); // select out of 10 questions
+        let randomSelection = Math.floor(Math.random() * 11) + 1; // select out of 10 questions
         questionList.push(Object.values(parsedAbility)[randomSelection]);
+        delete parsedAbility[randomSelection];
     }
-    console.log(questionList);
+    return questionList;
 }
 
-const selectNextQuestion = () => {
-    let category = Math.floor(Math.random() * 3); // 0, 1 or 2
-    if (category === 0) {
-
-    } else if (category === 1) {
-        console.log(category);
-    } else if (category === 2) {
-        console.log(category);
-    }
+const updateQuestion = () => {
+    let questionList = CreatingQuestionListing();
+    questionList.shift();
+    return questionList;
 }
 
 const keepScore = () => {
     let correctGuesses = 0;
     let totalGuesses = 0;
-    // if guess = true, correctGuesses++
+    // if (guess = true) {
+    //     correctGuesses++;
+    // }
     totalGuesses++;
     let updateContent = correctGuesses + " / " + totalGuesses;
     $("#score").textContent=updateContent;
@@ -47,17 +49,20 @@ const validateAnswer = () => {
     console.log("testing"); // test to see if clicking a button works
     const parsed = JSON.parse(ICON_ANSWERS);
 
-    console.log(Object.values(parsed)[1]); // access second question answers
-    console.log(parsed["question1"]); // access first question answers
-
     keepScore();
-    selectNextQuestion();
+    updateQuestion();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    let firstQuestion = CreatingQuestionListing();
+
+    $("#question").textContent="What champ has this ability?";
+    $("#A").textContent=firstQuestion[0][0];
+    $("#B").textContent=firstQuestion[0][1];
+    $("#C").textContent=firstQuestion[0][2];
+    $("#D").textContent=firstQuestion[0][3];
 
     $(".selections").addEventListener("click", validateAnswer);
-    testCreatingQuestionListing();
 
 })
 
