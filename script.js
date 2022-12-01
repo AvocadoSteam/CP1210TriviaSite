@@ -1,21 +1,54 @@
 const $ = selector => document.querySelector(selector);
 
-const selectNextQuestion = () => {
-    let category = Math.floor(Math.random() * 2); // 0, 1 or 2
-    if (category === 0) {
-        console.log(category);
-    } else if (category === 1) {
-        console.log(category);
-    } else if (category === 2) {
-        console.log(category);
+const CreatingQuestionListing = () => {
+    let questionList = []; // place to add questions
+    let count = 4; // 12 questions to choose
+    let parsedIcons = JSON.parse(ICON_ANSWERS);
+    let parsedVoicelines = JSON.parse(VOICELINE_ANSWERS);
+    let parsedAbility = JSON.parse(ABILITY_ANSWERS);
+    //TODO put values inside of VOICELINE and ABILITY answers
+
+    for (let i = 0; i < count; i++) { // adds icon answers
+        let randomSelection = Math.floor(Math.random() * 10) + 1; // select out of 10 questions
+        questionList.push(Object.values(parsedIcons)[randomSelection]);
+        delete parsedIcons[randomSelection];
     }
+    count = 4;
+    for (let i = 0; i < count; i++) { // adds voiceline answers
+        let randomSelection = Math.floor(Math.random() * 10) + 1; // select out of 10 questions
+        questionList.push(Object.values(parsedVoicelines)[randomSelection]);
+        delete parsedVoicelines[randomSelection];
+    }
+    couint = 4;
+    for (let i = 0; i < count; i++) { // adds ability answers
+        let randomSelection = Math.floor(Math.random() * 11) + 1; // select out of 10 questions
+        questionList.push(Object.values(parsedAbility)[randomSelection]);
+        delete parsedAbility[randomSelection];
+    }
+    return questionList;
+}
+
+const updateQuestion = () => {
+    let questionList = firstQuestion;
+    questionList.shift();
+    return questionList;
 }
 
 const keepScore = () => {
-    let correctGuesses = 0;
-    let totalGuesses = 0;
-    // if guess = true, correctGuesses++
+    let questionCount = 0; // make global
+    let correctGuesses = 0; // make global
+    let totalGuesses = 0; // make global
+    if ($("#A").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    } else if ($("#B").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    } else if ($("#C").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    } else if ($("#D").textContent == firstQuestion[questionCount][4]) {
+        correctGuesses++;
+    }
     totalGuesses++;
+    questionCount++;
     let updateContent = correctGuesses + " / " + totalGuesses;
     $("#score").textContent=updateContent;
 }
@@ -24,14 +57,16 @@ const validateAnswer = () => {
     console.log("testing"); // test to see if clicking a button works
     const parsed = JSON.parse(ICON_ANSWERS);
 
-    console.log(Object.values(parsed)[1]); // access second question answers
-    console.log(parsed["question1"]); // access first question answers
-
     keepScore();
-    selectNextQuestion();
+    updateQuestion();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    $("#question").textContent="What champ has this ability?";
+    $("#A").textContent=firstQuestion[0][0];
+    $("#B").textContent=firstQuestion[0][1];
+    $("#C").textContent=firstQuestion[0][2];
+    $("#D").textContent=firstQuestion[0][3];
 
     $(".selections").addEventListener("click", validateAnswer);
 
@@ -39,25 +74,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const ICON_ANSWERS = '{' +
     '"question1": [' +
-    '"Annie", "Renekton", "Caitlyn", "Diana", "a"],' +
+    '"Annie", "Renekton", "Caitlyn", "Diana", "Annie"],' +
     '"question2": [' +
-    '"Skarner", "Darius", "Azir", "Thresh", "c"],' +
+    '"Skarner", "Darius", "Azir", "Thresh", "Azir"],' +
     '"question3": [' +
-    '"Kai\'sa", "Zeri", "Nilah", "Gwen", "c"],' +
+    '"Kai\'sa", "Zeri", "Nilah", "Gwen", "Nilah"],' +
     '"question4": [' +
-    '"Rek\'sai", "Kassadin", "Cho\'gath", "Kha\'zix", "a"],' +
+    '"Rek\'sai", "Kassadin", "Cho\'gath", "Kha\'zix", "Rek\'sai"],' +
     '"question5": [' +
-    '"Ivern", "Zyra", "Maokai", "Zac", "b"],' +
+    '"Ivern", "Zyra", "Maokai", "Zac", "Zyra"],' +
     '"question6": [' +
-    '"Thresh", "Mordekaiser", "Senna", "Yorick", "d"],' +
+    '"Thresh", "Mordekaiser", "Senna", "Yorick", "Yorick"],' +
     '"question7": [' +
-    '"Lissandra", "Ashe", "Sejuani", "Trundle", "d"],' +
+    '"Lissandra", "Ashe", "Sejuani", "Trundle", "Trundle"],' +
     '"question8": [' +
-    '"Zoe", "Soraka", "Seraphine", "Sona", "b"],' +
+    '"Zoe", "Soraka", "Seraphine", "Sona", "Soraka"],' +
     '"question9": [' +
-    '"Sion", "Darius", "Ornn", "Garen", "a"],' +
+    '"Sion", "Darius", "Ornn", "Garen", "Sion"],' +
     '"question10": [' +
-    '"Rammus", "Malphite", "Gnar", "Taliyah", "c"]' +
+    '"Rammus", "Malphite", "Gnar", "Taliyah", "Gnar"]' +
     '}';
 
 const VOICELINE_ANSWERS = '{' +
@@ -105,3 +140,5 @@ const ABILITY_ANSWERS = '{' +
     '"question10": [' +
     ']' +
     '}';
+
+const firstQuestion = CreatingQuestionListing();
