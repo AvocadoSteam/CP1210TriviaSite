@@ -19,9 +19,9 @@ const CreatingQuestionListing = () => {
         questionList.push(Object.values(parsedVoicelines)[randomSelection]);
         delete parsedVoicelines[randomSelection];
     }
-    couint = 4;
+    count = 4;
     for (let i = 0; i < count; i++) { // adds ability answers
-        let randomSelection = Math.floor(Math.random() * 11) + 1; // select out of 10 questions
+        let randomSelection = Math.floor(Math.random() * 10) + 1; // select out of 10 questions
         questionList.push(Object.values(parsedAbility)[randomSelection]);
         delete parsedAbility[randomSelection];
     }
@@ -31,13 +31,16 @@ const CreatingQuestionListing = () => {
 const updateQuestion = () => {
     let questionList = firstQuestion;
     questionList.shift();
+    console.log(firstQuestion);
+    $("#A").textContent=firstQuestion[0][0];
+    $("#B").textContent=firstQuestion[0][1];
+    $("#C").textContent=firstQuestion[0][2];
+    $("#D").textContent=firstQuestion[0][3];
+    questionCount++;
     return questionList;
 }
 
 const keepScore = () => {
-    let questionCount = 0; // make global
-    let correctGuesses = 0; // make global
-    let totalGuesses = 0; // make global
     if ($("#A").textContent == firstQuestion[questionCount][4]) {
         correctGuesses++;
     } else if ($("#B").textContent == firstQuestion[questionCount][4]) {
@@ -48,28 +51,42 @@ const keepScore = () => {
         correctGuesses++;
     }
     totalGuesses++;
-    questionCount++;
     let updateContent = correctGuesses + " / " + totalGuesses;
     $("#score").textContent=updateContent;
 }
 
+/*
+
+ */
 const validateAnswer = () => {
     console.log("testing"); // test to see if clicking a button works
     const parsed = JSON.parse(ICON_ANSWERS);
 
-    keepScore();
+    console.log(firstQuestion);
     updateQuestion();
+    keepScore();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    $("#question").textContent="What champ has this ability?";
+    $("#question").textContent="What champ has this ability icon?";
     $("#A").textContent=firstQuestion[0][0];
     $("#B").textContent=firstQuestion[0][1];
     $("#C").textContent=firstQuestion[0][2];
     $("#D").textContent=firstQuestion[0][3];
 
-    $(".selections").addEventListener("click", validateAnswer);
-
+    // $("button").addEventListener("click", validateAnswer);
+    $("#A").addEventListener("click", (evt) => { // these are tests
+        console.log("a");
+    });
+    $("#B").addEventListener("click", (evt) => {
+        console.log("b");
+    });
+    $("#C").addEventListener("click", (evt) => {
+        console.log("a");
+    });
+    $("#D").addEventListener("click", (evt) => {
+        console.log("d");
+    });
 })
 
 const ICON_ANSWERS = '{' +
@@ -142,3 +159,6 @@ const ABILITY_ANSWERS = '{' +
     '}';
 
 const firstQuestion = CreatingQuestionListing();
+let questionCount = 0;
+let correctGuesses = 0;
+let totalGuesses = 0;
