@@ -29,8 +29,13 @@ const CreatingQuestionListing = () => {
     count = 4;
     for (let i = 0; i < count; i++) { // adds ability answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
-        questionList.push(Object.values(ABILITY_ANSWERS)[randomSelection]);
-       ABILITY_ANSWERS[randomSelection] = 1;
+        if (Object.values(ABILITY_ANSWERS)[randomSelection] !== 1) {
+            questionList.push(Object.values(ABILITY_ANSWERS)[randomSelection]);
+            ABILITY_ANSWERS[randomSelection] = 1;
+        } else {
+            i--;
+        }
+
     }
 
     return questionList;
