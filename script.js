@@ -86,35 +86,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     $("#choices").addEventListener("click", validateAnswer);
 
-    /*
+
     $("#A").addEventListener("click", (evt) => { // these are tests
         console.log("a");
-        if ($("#A").textContent === questionList.answers.answer.a) {
+        if ($("#A").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
 
     $("#B").addEventListener("click", (evt) => {
         console.log("b");
-        if ($("#B").textContent === questionList.answers.answer.b) {
+        if ($("#B").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
 
     $("#C").addEventListener("click", (evt) => {
         console.log("c");
-        if ($("#C").textContent === questionList.answers.answer.c) {
+        if ($("#C").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
 
     $("#D").addEventListener("click", (evt) => {
         console.log("d");
-        if ($("#D").textContent === questionList.answers.answer.d) {
+        if ($("#D").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
-    */
+
 
     console.log(Object.values(questionList));
     console.log(Object.values(ICON_ANSWERS));
