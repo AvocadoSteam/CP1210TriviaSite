@@ -62,6 +62,16 @@ Runs once a button is clicked
  */
 const validateAnswer = () => {
     if (questionCount !== 8) {
+        if ($("#A").textContent === questionList[0].answers.answer.a) {
+            correctGuesses++;
+        } else if ($("#B").textContent === questionList[0].answers.answer.b) {
+            correctGuesses++;
+        } else if ($("#C").textContent === questionList[0].answers.answer.c) {
+            correctGuesses++;
+        } else if ($("#D").textContent === questionList[0].answers.answer.d) {
+            correctGuesses++;
+        }
+
         updateQuestion();
         keepScore();
     }
@@ -74,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
 
-    $("button").addEventListener("click", validateAnswer);
+    $("#choices").addEventListener("click", validateAnswer);
 
     /*
     $("#A").addEventListener("click", (evt) => { // these are tests
@@ -118,7 +128,7 @@ const ICON_ANSWERS = [
         b        : "Renekton",
         c        : "Caitlyn",
         d        : "Diana",
-        answer   : "a"
+        answer   : "Annie"
         }
     },
     {question: 2,
@@ -127,7 +137,7 @@ const ICON_ANSWERS = [
         b        : "Darius",
         c        : "Azir",
         d        : "Thresh",
-        answer   : "c"
+        answer   : "Azir"
         }
     },
     {question: 3,
@@ -136,7 +146,7 @@ const ICON_ANSWERS = [
         b        : "Zeri",
         c        : "Nilah",
         d        : "Gwen",
-        answer   : "c"
+        answer   : "Nilah"
         }
     },
     {question: 4,
@@ -145,7 +155,7 @@ const ICON_ANSWERS = [
         b        : "Kassadin",
         c        : "Chogath",
         d        : "Kha'zix",
-        answer   : "a"
+        answer   : "Rek'sai"
         }
     },
     {question: 5,
@@ -154,7 +164,7 @@ const ICON_ANSWERS = [
         b        : "Zyra",
         c        : "Maokai",
         d        : "Zac",
-        answer   : "b"
+        answer   : "Zyra"
         }
     },
     {question: 6,
@@ -163,7 +173,7 @@ const ICON_ANSWERS = [
         b        : "Mordekaiser",
         c        : "Senna",
         d        : "Yorick",
-        answer   : "d"
+        answer   : "Yorick"
         }
     },
     {question: 7,
@@ -172,7 +182,7 @@ const ICON_ANSWERS = [
         b        : "Ashe",
         c        : "Sejuani",
         d        : "Trundle",
-        answer   : "d"
+        answer   : "Trundle"
         }
     },
     {question: 8,
@@ -181,7 +191,7 @@ const ICON_ANSWERS = [
         b        : "Soraka",
         c        : "Seraphine",
         d        : "Sona",
-        answer   : "b"
+        answer   : "Soraka"
         }
     },
     {question: 9,
@@ -190,7 +200,7 @@ const ICON_ANSWERS = [
         b        : "Darius",
         c        : "Ornn",
         d        : "Garen",
-        answer   : "a"
+        answer   : "Sion"
         }
     },
     {question: 10,
@@ -199,7 +209,7 @@ const ICON_ANSWERS = [
         b        : "Malphite",
         c        : "Gnar",
         d        : "Taliyah",
-        answer   : "c"
+        answer   : "Gnar"
         }
     }
 ]
@@ -211,7 +221,7 @@ const VOICELINE_ANSWERS = [
             b        : "Volibear",
             c        : "Vladimir",
             d        : "Aatrox",
-            answer   : "d"
+            answer   : "Aatrox"
         }
     },
     {question: 2,
@@ -220,7 +230,7 @@ const VOICELINE_ANSWERS = [
             b        : "Caitlyn",
             c        : "Fiora",
             d        : "Evelynn",
-            answer   : "a"
+            answer   : "Camille"
         }
     },
     {question: 3,
@@ -229,7 +239,7 @@ const VOICELINE_ANSWERS = [
             b        : "Thresh",
             c        : "Yorick",
             d        : "Mordekaiser",
-            answer   : "a"
+            answer   : "Hecarim"
         }
     },
     {question: 4,
@@ -238,7 +248,7 @@ const VOICELINE_ANSWERS = [
             b        : "Shaco",
             c        : "Jayce",
             d        : "Jhin",
-            answer   : "d"
+            answer   : "Jhin"
         }
     },
     {question: 5,
@@ -247,7 +257,7 @@ const VOICELINE_ANSWERS = [
             b        : "Sejuani",
             c        : "Katarina",
             d        : "Leona",
-            answer   : "c"
+            answer   : "Katarina"
         }
     },
     {question: 6,
@@ -256,7 +266,7 @@ const VOICELINE_ANSWERS = [
             b        : "Nilah",
             c        : "Soraka",
             d        : "Zoe",
-            answer   : "b"
+            answer   : "Nilah"
         }
     },
     {question: 7,
@@ -265,7 +275,7 @@ const VOICELINE_ANSWERS = [
             b        : "Poppy",
             c        : "Qiyana",
             d        : "Morgana",
-            answer   : "a"
+            answer   : "Rell"
         }
     },
     {question: 8,
@@ -274,7 +284,7 @@ const VOICELINE_ANSWERS = [
             b        : "Malphite",
             c        : "Rammus",
             d        : "Galio",
-            answer   : "b"
+            answer   : "Malphite"
         }
     },
     {question: 9,
@@ -283,7 +293,7 @@ const VOICELINE_ANSWERS = [
             b        : "Veigar",
             c        : "Sion",
             d        : "Xerath",
-            answer   : "d"
+            answer   : "Xerath"
         }
     },
     {question: 10,
@@ -292,7 +302,7 @@ const VOICELINE_ANSWERS = [
             b        : "Draven",
             c        : "Tryndamere",
             d        : "Renekton",
-            answer   : "c"
+            answer   : "Tryndamere"
         }
     }
 ]
