@@ -15,9 +15,6 @@ const CreatingQuestionListing = () => {
             i--;
         }
     }
-    for (let i = 0; i < count; i++)
-
-
     count = 4;
     for (let i = 0; i < count; i++) { // adds voiceline answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
@@ -28,14 +25,14 @@ const CreatingQuestionListing = () => {
             i--;
         }
     }
-    /*
+
     count = 4;
     for (let i = 0; i < count; i++) { // adds ability answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
         questionList.push(Object.values(ABILITY_ANSWERS)[randomSelection]);
        ABILITY_ANSWERS[randomSelection] = 1;
     }
-    */
+
     return questionList;
 }
 
@@ -61,20 +58,10 @@ const keepScore = () => {
 Runs once a button is clicked
  */
 const validateAnswer = () => {
-    if (questionCount !== 8) {
-        if ($("#A").textContent === questionList[0].answers.answer.a) {
-            correctGuesses++;
-        } else if ($("#B").textContent === questionList[0].answers.answer.b) {
-            correctGuesses++;
-        } else if ($("#C").textContent === questionList[0].answers.answer.c) {
-            correctGuesses++;
-        } else if ($("#D").textContent === questionList[0].answers.answer.d) {
-            correctGuesses++;
-        }
-
+    if (questionCount < 13) {
         updateQuestion();
-        keepScore();
     }
+    keepScore();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -88,28 +75,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     $("#A").addEventListener("click", (evt) => { // these are tests
-        console.log("a");
         if ($("#A").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
 
     $("#B").addEventListener("click", (evt) => {
-        console.log("b");
         if ($("#B").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
 
     $("#C").addEventListener("click", (evt) => {
-        console.log("c");
         if ($("#C").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
     });
 
     $("#D").addEventListener("click", (evt) => {
-        console.log("d");
         if ($("#D").textContent === questionList[0].answers.answer) {
             correctGuesses++;
         }
@@ -307,28 +290,98 @@ const VOICELINE_ANSWERS = [
     }
 ]
 
-const ABILITY_ANSWERS = '{' +
-    '"question1": [' +
-    '],' +
-    '"question2": [' +
-    '],' +
-    '"question3": [' +
-    '],' +
-    '"question4": [' +
-    '],' +
-    '"question5": [' +
-    '],' +
-    '"question6": [' +
-    '],' +
-    '"question7": [' +
-    '],' +
-    '"question8": [' +
-    '],' +
-    '"question9": [' +
-    '],' +
-    '"question10": [' +
-    ']' +
-    '}';
+const ABILITY_ANSWERS = [
+    {question: 1,
+        answers: {
+            a        : "a",
+            b        : "Va",
+            c        : "a",
+            d        : "a",
+            answer   : "Aa"
+        }
+    },
+    {question: 2,
+        answers: {
+            a        : "a",
+            b        : "Caan",
+            c        : "aora",
+            d        : "Ean",
+            answer   : "Caae"
+        }
+    },
+    {question: 3,
+        answers: {
+            a        : "Ham",
+            b        : "Tash",
+            c        : "ack",
+            d        : "Moaer",
+            answer   : "Ham"
+        }
+    },
+    {question: 4,
+        answers: {
+            a        : "ae",
+            b        : "a",
+            c        : "Ja",
+            d        : "an",
+            answer   : "Jha"
+        }
+    },
+    {question: 5,
+        answers: {
+            a        : "Xah",
+            b        : "Sai",
+            c        : "Kaa",
+            d        : "aa",
+            answer   : "Kaa"
+        }
+    },
+    {question: 6,
+        answers: {
+            a        : "Saa",
+            b        : "Nia",
+            c        : "Saa",
+            d        : "ae",
+            answer   : "Nah"
+        }
+    },
+    {question: 7,
+        answers: {
+            a        : "Ra",
+            b        : "Pay",
+            c        : "Qana",
+            d        : "a",
+            answer   : "a"
+        }
+    },
+    {question: 8,
+        answers: {
+            a        : "a",
+            b        : "a",
+            c        : "a",
+            d        : "a",
+            answer   : "a"
+        }
+    },
+    {question: 9,
+        answers: {
+            a        : "a",
+            b        : "a",
+            c        : "a",
+            d        : "a",
+            answer   : "a"
+        }
+    },
+    {question: 10,
+        answers: {
+            a        : "a",
+            b        : "a",
+            c        : "a",
+            d        : "a",
+            answer   : "a"
+        }
+    }
+]
 
 const questionList = CreatingQuestionListing();
 let questionCount = 0;
