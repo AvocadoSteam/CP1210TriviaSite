@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#D").textContent=firstQuestion[0][3];
 
     // $("button").addEventListener("click", validateAnswer);
-    $("#A").addEventListener("click", (evt) => {
+    $("#A").addEventListener("click", (evt) => { // these are tests
         console.log("a");
     });
     $("#B").addEventListener("click", (evt) => {
