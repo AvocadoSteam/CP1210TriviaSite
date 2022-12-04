@@ -43,6 +43,7 @@ const CreatingQuestionListing = () => {
 
 const updateQuestion = () => {
     questionList.shift();
+    document.getElementById("sourceImage").src=questionList[0].source;
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
@@ -69,6 +70,7 @@ const validateAnswer = () => {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("sourceImage").src=questionList[0].source;
     $("#question").textContent="What champ has this ability icon?";
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
@@ -107,11 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(Object.values(questionList));
     console.log(Object.values(ICON_ANSWERS));
     console.log(questionList[0].answers)
+
 })
 
 const ICON_ANSWERS = [
     {question: 1,
-    answers: {
+        source: "/media/icons/q1.webp",
+        answers: {
         a        : "Annie",
         b        : "Renekton",
         c        : "Caitlyn",
@@ -120,7 +124,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 2,
-    answers: {
+        source: "/media/icons/q2.webp",
+        answers: {
         a        : "Skarner",
         b        : "Darius",
         c        : "Azir",
@@ -129,7 +134,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 3,
-    answers: {
+        source: "/media/icons/q3.webp",
+        answers: {
         a        : "Kaisa",
         b        : "Zeri",
         c        : "Nilah",
@@ -138,7 +144,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 4,
-    answers: {
+        source: "/media/icons/q4.webp",
+        answers: {
         a        : "Rek'sai",
         b        : "Kassadin",
         c        : "Chogath",
@@ -147,7 +154,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 5,
-    answers: {
+        source: "/media/icons/q5.webp",
+        answers: {
         a        : "Ivern",
         b        : "Zyra",
         c        : "Maokai",
@@ -156,7 +164,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 6,
-    answers: {
+        source: "/media/icons/q6.webp",
+        answers: {
         a        : "Thresh",
         b        : "Mordekaiser",
         c        : "Senna",
@@ -165,7 +174,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 7,
-    answers: {
+        source: "/media/icons/q7.webp",
+        answers: {
         a        : "Lissandra",
         b        : "Ashe",
         c        : "Sejuani",
@@ -174,7 +184,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 8,
-    answers: {
+        source: "/media/icons/q8.webp",
+        answers: {
         a        : "Zoe",
         b        : "Soraka",
         c        : "Seraphine",
@@ -183,7 +194,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 9,
-    answers: {
+        source: "/media/icons/q9.webp",
+        answers: {
         a        : "Sion",
         b        : "Darius",
         c        : "Ornn",
@@ -192,7 +204,8 @@ const ICON_ANSWERS = [
         }
     },
     {question: 10,
-    answers: {
+        source: "/media/icons/q10.webp",
+        answers: {
         a        : "Rammus",
         b        : "Malphite",
         c        : "Gnar",

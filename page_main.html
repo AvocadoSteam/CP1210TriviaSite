@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
     <head>
         <style>
-
             .header {
                 font-family: beaufort_for_lolbold, serif;
                 /*background-color: blanchedalmond;*/
@@ -12,13 +10,6 @@
                 padding-top: 20px;
 
             }
-
-
-            .selections {
-                text-align: center;
-            }
-
-
             #question { /* Where the question for the user will go */
                 font-family: spiegelregular, serif;
                 text-align: center;
@@ -26,39 +17,34 @@
                 font-weight: bold;
                 padding-top: 20px;
             }
-
-
             #choices {
                 font-family: beaufort_for_lolbold, serif;
                 text-align: center;
                 font-size: 18px;
             }
-
-
             #source { /* Where the source to guess on will go */
                 text-align: center;
                 border-color: blue;
-                padding-top: 100px;
+                padding-top: 40px;
             }
-
-
+            #sourceImage{}
             #score {
                 font-family: spiegelregular, serif;
                 font-weight: bold;
                 font-size: 20px;
                 text-align: center;
             }
-
-
             #A {}
             #B {}
             #C {}
             #D {}
         </style>
+
         <link rel="stylesheet" href="css/beaufortwebfontkit-20221202-190625/stylesheet.css" type="text/css" charset="utf-8" />
         <link rel="stylesheet" href="css/spiegelwebfontkit-20221202-191333/stylesheet.css" type="text/css" charset="utf-8" />
         <link rel="stylesheet" href="css/bootstrap.css">
-        <title>A Trivia Website | Guess by Icon</title>
+
+        <title>A League of Legends Trivia Website</title>
     </head>
 
     <body>
@@ -67,18 +53,18 @@
         <script type="text/javascript" src="./script.js"></script>
         <script type="text/javascript" src="./answer_keys/answers_icon.json"></script>
         <script src="js/bootstrap.js"></script>
-        <!-- -->
-        <!-- content -->
-        <!--<h1 class="header"><strong>Trivia</strong></h1>-->
-        <h1 class="header"><img width="300" height="114.5" src="/media/logos/1200px-League_of_Legends_2019_vector.svg.png" alt=""></h1>
-        <h2 class="header"><strong>TRIVIA</strong></h2>
-        <h3 class="header">Guess a champion by Icon, Voiceline, or Ability name!</h3>
 
+        <!-- content -->
+        <h1 class="header"><img width="300" height="114.5" src="/media/logos/1200px-League_of_Legends_2019_vector.svg.png" alt=""></h1>
+        <h2 class="header" style="font-size: 60px;padding-top:0;"><strong>TRIVIA</strong></h2>
+        <h3 class="header" style="padding-top:0;">Guess a champion by Icon, Voiceline, or Ability name!</h3>
+
+        <!-- source file (img, text, voiceline), and question -->
         <div id="source">
-            <img width="100" height="100" src="/media/icons/q1.webp" alt=""class="rounded">
+            <img id="sourceImage"width="100" height="100" src="/media/icons/q1.webp" alt=""class="rounded">
             <span class="border border-warning"></span>
         </div>
-        <p id="question">this is where the question should go</p>
+        <p id="question"></p>
 
         <!-- all possible choices -->
         <div id="choices">
@@ -88,6 +74,7 @@
             <button type="button" class="btn btn-warning" id="D" onclick=""><strong>D) answer</strong></button>
         </div>
 
+        <!-- user scoring -->
         <h4 style="text-align: center;padding-top:40px;">Score:</h4>
         <p id="score"></p>
 
