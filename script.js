@@ -47,7 +47,6 @@ const updateQuestion = () => {
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
-    questionCount++;
     return questionList;
 }
 
@@ -55,8 +54,8 @@ const updateQuestion = () => {
 Adds +1 to number of guesses
  */
 const keepScore = () => {
-    totalGuesses++;
-    $("#score").textContent=correctGuesses + " / " + totalGuesses;
+    questionCount++;
+    $("#score").textContent=correctGuesses + " / " + questionCount;
 }
 
 /*
@@ -75,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
+    $("#score").textContent=correctGuesses + " / " + questionCount;
 
     $("#choices").addEventListener("click", validateAnswer);
 
@@ -389,6 +389,5 @@ const ABILITY_ANSWERS = [
 ]
 
 const questionList = CreatingQuestionListing();
-let questionCount = 0;
+let questionCount = 1;
 let correctGuesses = 0;
-let totalGuesses = 0;
