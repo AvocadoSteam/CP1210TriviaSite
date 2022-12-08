@@ -43,11 +43,31 @@ const CreatingQuestionListing = () => {
 
 const updateQuestion = () => {
     questionList.shift();
-    document.getElementById("sourceImage").src=questionList[0].source;
+    if(questionCount < 4){
+        document.getElementById("sourceImage").src=questionList[0].source;
+        console.log("Log4!")
+    }
+    if(questionCount >= 4 && questionCount < 8){
+        document.getElementById("sourceImage").className = "hidden";
+        document.getElementById("sourceVoiceline").className = "";
+        //document.getElementById("sourceVoiceline").src=questionList[4].source;
+        $("#question").textContent="What champ has this voiceline?";
+        console.log("Log8!")
+
+    }
+    if(questionCount >=8 && questionCount < 12){
+        document.getElementById("sourceVoiceline").className = "hidden";
+        document.getElementById("sourceAbility").className = "";
+        //document.getElementById("sourceAbility").src=questionList[7].source;
+        $("#question").textContent="What champ has this ability name?";
+        console.log("Log12!")
+
+    }
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
+
     return questionList;
 }
 
@@ -71,6 +91,7 @@ const validateAnswer = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sourceImage").src=questionList[0].source;
+
     $("#question").textContent="What champ has this ability icon?";
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
@@ -217,6 +238,7 @@ const ICON_ANSWERS = [
 
 const VOICELINE_ANSWERS = [
     {question: 1,
+        source: "/media/voiceline/q1.ogg",
         answers: {
             a        : "Thresh",
             b        : "Volibear",
@@ -226,6 +248,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 2,
+        source: "/media/voiceline/q2.ogg",
         answers: {
             a        : "Camille",
             b        : "Caitlyn",
@@ -235,6 +258,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 3,
+        source: "/media/voiceline/q3.ogg",
         answers: {
             a        : "Hecarim",
             b        : "Thresh",
@@ -244,6 +268,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 4,
+        source: "/media/voiceline/q4.ogg",
         answers: {
             a        : "Pyke",
             b        : "Shaco",
@@ -253,6 +278,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 5,
+        source: "/media/voiceline/q5.ogg",
         answers: {
             a        : "Xayah",
             b        : "Sejuani",
@@ -262,6 +288,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 6,
+        source: "/media/voiceline/q6.ogg",
         answers: {
             a        : "Samira",
             b        : "Nilah",
@@ -271,6 +298,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 7,
+        source: "/media/voiceline/q7.ogg",
         answers: {
             a        : "Rell",
             b        : "Poppy",
@@ -280,6 +308,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 8,
+        source: "/media/voiceline/q8.ogg",
         answers: {
             a        : "Graves",
             b        : "Malphite",
@@ -289,6 +318,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 9,
+        source: "/media/voiceline/q9.ogg",
         answers: {
             a        : "Thresh",
             b        : "Veigar",
@@ -298,6 +328,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 10,
+        source: "/media/voiceline/q10.ogg",
         answers: {
             a        : "Trundle",
             b        : "Draven",
@@ -313,9 +344,9 @@ const ABILITY_ANSWERS = [
         answers: {
             a        : "a",
             b        : "Va",
-            c        : "a",
+            c        : "Ae",
             d        : "a",
-            answer   : "Aa"
+            answer   : "Ae"
         }
     },
     {question: 2,
@@ -324,7 +355,7 @@ const ABILITY_ANSWERS = [
             b        : "Caan",
             c        : "aora",
             d        : "Ean",
-            answer   : "Caae"
+            answer   : "Caan"
         }
     },
     {question: 3,
@@ -342,7 +373,7 @@ const ABILITY_ANSWERS = [
             b        : "a",
             c        : "Ja",
             d        : "an",
-            answer   : "Jha"
+            answer   : "Ja"
         }
     },
     {question: 5,
@@ -351,7 +382,7 @@ const ABILITY_ANSWERS = [
             b        : "Sai",
             c        : "Kaa",
             d        : "aa",
-            answer   : "Kaa"
+            answer   : "aa"
         }
     },
     {question: 6,
@@ -360,7 +391,7 @@ const ABILITY_ANSWERS = [
             b        : "Nia",
             c        : "Saa",
             d        : "ae",
-            answer   : "Nah"
+            answer   : "Saa"
         }
     },
     {question: 7,
@@ -369,7 +400,7 @@ const ABILITY_ANSWERS = [
             b        : "Pay",
             c        : "Qana",
             d        : "a",
-            answer   : "a"
+            answer   : "Pay"
         }
     },
     {question: 8,
