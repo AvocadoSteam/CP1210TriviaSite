@@ -3,9 +3,29 @@
 <html lang="en">
     <head>
         <style>
+            @keyframes shine {
+                0% {
+                    background-position: 0;
+                }
+                60% {
+                    background-position: 600px;
+                }
+                100% {
+                    background-position: 600px;
+                }
+            }
+
+            h2 {
+                padding: 64px;
+                background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: shine 3s infinite linear;
+            }
+
             .header {
                 font-family: beaufort_for_lolbold, serif;
-                /*background-color: blanchedalmond;*/
+                background-color: #010A13;
                 text-align: center;
                 padding-top: 20px;
 
@@ -13,6 +33,8 @@
             .hidden {
                 display: none;
             }
+
+
             #question { /* Where the question for the user will go */
                 font-family: spiegelregular, serif;
                 text-align: center;
@@ -38,6 +60,7 @@
                 font-weight: bold;
                 font-size: 20px;
                 text-align: center;
+                color: #A09B8C;
             }
             #A {}
             #B {}
@@ -52,7 +75,7 @@
         <title>A League of Legends Trivia Website</title>
     </head>
 
-    <body>
+    <body style="background-color: #010A13;">
 
         <!-- importing all scripts -->
         <script type="text/javascript" src="./script.js"></script>
@@ -61,17 +84,17 @@
 
         <!-- content -->
         <h1 class="header"><img width="300" height="114.5" src="/media/logos/1200px-League_of_Legends_2019_vector.svg.png" alt=""></h1>
-        <h2 class="header" style="font-size: 60px;padding-top:0;"><strong>TRIVIA</strong></h2>
-        <h3 class="header" style="padding-top:0;">Guess a champion by Icon, Voiceline, or Ability name!</h3>
+        <h2 class="header" style="font-size: 60px;color: #005A82;padding-top:0;"><strong>TRIVIA</strong></h2>
+        <h3 class="header" style="padding-top:0;color: #A09B8C;">Guess a champion by Icon, Voiceline, or Ability name!</h3>
 
         <!-- source file (img, text, voiceline), and question -->
         <div id="source">
-            <img id="sourceImage"width="100" height="100" src="" alt=""class="rounded">
+            <img id="sourceImage" width="100" height="100" src="" alt=""class="rounded">
             <audio class="hidden" id="sourceVoiceline" src="" controls>Audio not supported</audio>
             <h3 class="hidden" id="sourceAbility"></h3>
             <span class="border border-warning"></span>
         </div>
-        <p id="question"></p>
+        <p id="question" style="color: #A09B8C;"></p>
 
         <!-- all possible choices -->
         <div id="choices">
@@ -82,7 +105,7 @@
         </div>
 
         <!-- user scoring -->
-        <h4 style="text-align: center;padding-top:40px;">Score:</h4>
+        <h4 style="text-align: center;padding-top:40px;color: #A09B8C;">Score:</h4>
         <p id="score"></p>
 
     </body>

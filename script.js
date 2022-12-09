@@ -43,11 +43,31 @@ const CreatingQuestionListing = () => {
 
 const updateQuestionImage = () => {
     questionList.shift();
-    document.getElementById("sourceImage").src=questionList[0].source;
+    if(questionCount < 4){
+        document.getElementById("sourceImage").src=questionList[0].source;
+        console.log("Log4!")
+    }
+    if(questionCount >= 4 && questionCount < 8){
+        document.getElementById("sourceImage").className = "hidden";
+        document.getElementById("sourceVoiceline").className = "";
+        //document.getElementById("sourceVoiceline").src=questionList[4].source;
+        $("#question").textContent="What champ has this voiceline?";
+        console.log("Log8!")
+
+    }
+    if(questionCount >=8 && questionCount < 12){
+        document.getElementById("sourceVoiceline").className = "hidden";
+        document.getElementById("sourceAbility").className = "";
+        //document.getElementById("sourceAbility").src=questionList[7].source;
+        $("#question").textContent="What champ has this ability name?";
+        console.log("Log12!")
+
+    }
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
+
     return questionList;
 }
 
