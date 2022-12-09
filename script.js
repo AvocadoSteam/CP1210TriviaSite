@@ -41,7 +41,7 @@ const CreatingQuestionListing = () => {
     return questionList;
 }
 
-const updateQuestion = () => {
+const updateQuestionImage = () => {
     questionList.shift();
     if(questionCount < 4){
         document.getElementById("sourceImage").src=questionList[0].source;
@@ -71,28 +71,65 @@ const updateQuestion = () => {
     return questionList;
 }
 
+// used to update the champion voicelines
+const updateQuestionVoiceline = () => {
+    questionList.shift();
+    document.getElementById("question").textContent="What champion has this voiceline?";
+    document.getElementById("sourceVoiceline").src=questionList[0].source;
+    $("#A").textContent=questionList[0].answers.a;
+    $("#B").textContent=questionList[0].answers.b;
+    $("#C").textContent=questionList[0].answers.c;
+    $("#D").textContent=questionList[0].answers.d;
+    return questionList;
+}
+
+// used to update Ability Name text
+const updateQuestionAbility = () => {
+    questionList.shift();
+    document.getElementById("question").textContent="What champion has this ability name?";
+    document.getElementById("sourceAbility").textContent=questionList[0].source;
+    $("#A").textContent=questionList[0].answers.a;
+    $("#B").textContent=questionList[0].answers.b;
+    $("#C").textContent=questionList[0].answers.c;
+    $("#D").textContent=questionList[0].answers.d;
+    return questionList;
+}
+
 /*
 Adds +1 to number of guesses
  */
 const keepScore = () => {
-    questionCount++;
-    $("#score").textContent=correctGuesses + " / " + questionCount;
+    if (questionCount === 12) {
+        console.log("Finish")
+    } else {
+        questionCount++;
+        $("#score").textContent=correctGuesses + " / " + questionCount;
+    }
 }
 
 /*
 Runs once a button is clicked
  */
 const validateAnswer = () => {
-    if (questionCount < 13) {
-        updateQuestion();
+    if (questionCount < 4) {
+        updateQuestionImage();
+    }
+    if (questionCount < 8 && 4 <= questionCount ) {
+        document.getElementById("sourceImage").classList.add("hidden");
+        document.getElementById("sourceVoiceline").classList.remove("hidden");
+        updateQuestionVoiceline();
+    }
+    if (questionCount < 12 && 8 <= questionCount) {
+        document.getElementById("sourceVoiceline").classList.add("hidden");
+        document.getElementById("sourceAbility").classList.remove("hidden");
+        updateQuestionAbility();
     }
     keepScore();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sourceImage").src=questionList[0].source;
-
-    $("#question").textContent="What champ has this ability icon?";
+    $("#question").textContent="What champion has this ability icon?";
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
@@ -341,93 +378,103 @@ const VOICELINE_ANSWERS = [
 
 const ABILITY_ANSWERS = [
     {question: 1,
+        source: "Feast",
         answers: {
-            a        : "a",
-            b        : "Va",
-            c        : "Ae",
-            d        : "a",
-            answer   : "Ae"
+            a        : "Cho'gath",
+            b        : "Dr. Mundo",
+            c        : "Vladimir",
+            d        : "Aatrox",
+            answer   : "Cho'gath"
         }
     },
     {question: 2,
+        source: "Neurotoxin",
         answers: {
-            a        : "a",
-            b        : "Caan",
-            c        : "aora",
-            d        : "Ean",
-            answer   : "Caan"
+            a        : "Teemo",
+            b        : "Singed",
+            c        : "Elise",
+            d        : "Casseopia",
+            answer   : "Elise"
         }
     },
     {question: 3,
+        source: "Prophet of an Elder God",
         answers: {
-            a        : "Ham",
-            b        : "Tash",
-            c        : "ack",
-            d        : "Moaer",
-            answer   : "Ham"
+            a        : "Anivia",
+            b        : "Illaoi",
+            c        : "Ornn",
+            d        : "Volibear",
+            answer   : "Illaoi"
         }
     },
     {question: 4,
+        source: "Eye of the Storm",
         answers: {
-            a        : "ae",
-            b        : "a",
-            c        : "Ja",
-            d        : "an",
-            answer   : "Ja"
+            a        : "Kayn",
+            b        : "Kalista",
+            c        : "Jinx",
+            d        : "Janna",
+            answer   : "Janna"
         }
     },
     {question: 5,
+        source: "Lilting Lullaby",
         answers: {
-            a        : "Xah",
-            b        : "Sai",
-            c        : "Kaa",
-            d        : "aa",
-            answer   : "aa"
+            a        : "Xayah",
+            b        : "Zoe",
+            c        : "Lulu",
+            d        : "Lillia",
+            answer   : "Lillia"
         }
     },
     {question: 6,
+        source: "Wither",
         answers: {
-            a        : "Saa",
-            b        : "Nia",
-            c        : "Saa",
-            d        : "ae",
-            answer   : "Saa"
+            a        : "Ryze",
+            b        : "Nasus",
+            c        : "Rammus",
+            d        : "Mordekaiser",
+            answer   : "Nasus"
         }
     },
     {question: 7,
+        source: "Heroic Charge",
         answers: {
-            a        : "Ra",
-            b        : "Pay",
-            c        : "Qana",
-            d        : "a",
-            answer   : "Pay"
+            a        : "Kled",
+            b        : "Sion",
+            c        : "Poppy",
+            d        : "Shen",
+            answer   : "Poppy"
         }
     },
     {question: 8,
+        source: "Break the Mold",
         answers: {
-            a        : "a",
-            b        : "a",
-            c        : "a",
-            d        : "a",
-            answer   : "a"
+            a        : "Ivern",
+            b        : "Leona",
+            c        : "Rell",
+            d        : "Diana",
+            answer   : "Rell"
         }
     },
     {question: 9,
+        source: "The Equalizer",
         answers: {
-            a        : "a",
-            b        : "a",
-            c        : "a",
-            d        : "a",
-            answer   : "a"
+            a        : "Rumble",
+            b        : "Sett",
+            c        : "Shaco",
+            d        : "Skarner",
+            answer   : "Rumble"
         }
     },
     {question: 10,
+        source: "Time Warp",
         answers: {
-            a        : "a",
-            b        : "a",
-            c        : "a",
-            d        : "a",
-            answer   : "a"
+            a        : "Ekko",
+            b        : "Zilean",
+            c        : "Xerath",
+            d        : "Veigar",
+            answer   : "Zilean"
         }
     }
 ]
