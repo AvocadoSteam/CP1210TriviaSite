@@ -13,6 +13,20 @@
             .hidden {
                 display: none;
             }
+            .correct {
+                padding-top: 10px;
+                font-weight: bold;
+                color: green;
+                text-outline: black 1px;
+                font-size: 30px;
+            }
+            .incorrect {
+                padding-top: 10px;
+                font-weight: bold;
+                color: red;
+                text-outline: black 1px;
+                font-size: 30px;
+            }
             #question { /* Where the question for the user will go */
                 font-family: spiegelregular, serif;
                 text-align: center;
@@ -82,8 +96,8 @@
         </div>
 
         <!-- user scoring -->
-        <h4 style="text-align: center;padding-top:40px;">Score:</h4>
-        <p id="score"></p>
+        <!-- <h4 style="text-align: center;padding-top:40px;">Score:</h4> -->
+        <p class="" id="score"></p>
 
     </body>
 </html>

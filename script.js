@@ -4,7 +4,6 @@ const $ = selector => document.querySelector(selector);
 const CreatingQuestionListing = () => {
     let questionList = []; // place to add questions
     let count = 4; // 12 questions to choose
-    //TODO put values inside of VOICELINE and ABILITY answers
 
     for (let i = 0; i < count; i++) { // adds icon answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
@@ -25,7 +24,6 @@ const CreatingQuestionListing = () => {
             i--;
         }
     }
-
     count = 4;
     for (let i = 0; i < count; i++) { // adds ability answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
@@ -35,33 +33,25 @@ const CreatingQuestionListing = () => {
         } else {
             i--;
         }
-
     }
-
     return questionList;
 }
 
+// updates Images, and hides/displays voicelines/ability names
 const updateQuestionImage = () => {
     questionList.shift();
     if(questionCount < 4){
         document.getElementById("sourceImage").src=questionList[0].source;
-        console.log("Log4!")
     }
     if(questionCount >= 4 && questionCount < 8){
         document.getElementById("sourceImage").className = "hidden";
         document.getElementById("sourceVoiceline").className = "";
-        //document.getElementById("sourceVoiceline").src=questionList[4].source;
         $("#question").textContent="What champ has this voiceline?";
-        console.log("Log8!")
-
     }
-    if(questionCount >=8 && questionCount < 12){
+    if(questionCount >= 8 && questionCount < 13){
         document.getElementById("sourceVoiceline").className = "hidden";
         document.getElementById("sourceAbility").className = "";
-        //document.getElementById("sourceAbility").src=questionList[7].source;
         $("#question").textContent="What champ has this ability name?";
-        console.log("Log12!")
-
     }
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
@@ -100,10 +90,9 @@ Adds +1 to number of guesses
  */
 const keepScore = () => {
     if (questionCount === 12) {
-        console.log("Finish")
+        alert("Congratulations! You scored " + correctGuesses + " / " + questionCount);
     } else {
         questionCount++;
-        $("#score").textContent=correctGuesses + " / " + questionCount;
     }
 }
 
@@ -134,40 +123,61 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
-    $("#score").textContent=correctGuesses + " / " + questionCount;
-
+    // $("#score").textContent=correctGuesses + " / " + questionCount;
     $("#choices").addEventListener("click", validateAnswer);
 
 
     $("#A").addEventListener("click", (evt) => { // these are tests
         if ($("#A").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
 
     $("#B").addEventListener("click", (evt) => {
         if ($("#B").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
 
     $("#C").addEventListener("click", (evt) => {
         if ($("#C").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
 
     $("#D").addEventListener("click", (evt) => {
         if ($("#D").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
-
-
-    console.log(Object.values(questionList));
-    console.log(Object.values(ICON_ANSWERS));
-    console.log(questionList[0].answers)
-
 })
 
 const ICON_ANSWERS = [
