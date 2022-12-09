@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const ICON_ANSWERS = [
     {question: 1,
-        source: "/media/icons/q1.webp",
+        source: "media/icons/q1.webp",
         answers: {
         a        : "Annie",
         b        : "Renekton",
@@ -162,7 +162,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 2,
-        source: "/media/icons/q2.webp",
+        source: "media/icons/q2.webp",
         answers: {
         a        : "Skarner",
         b        : "Darius",
@@ -172,7 +172,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 3,
-        source: "/media/icons/q3.webp",
+        source: "media/icons/q3.webp",
         answers: {
         a        : "Kaisa",
         b        : "Zeri",
@@ -182,7 +182,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 4,
-        source: "/media/icons/q4.webp",
+        source: "media/icons/q4.webp",
         answers: {
         a        : "Rek'sai",
         b        : "Kassadin",
@@ -192,7 +192,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 5,
-        source: "/media/icons/q5.webp",
+        source: "media/icons/q5.webp",
         answers: {
         a        : "Ivern",
         b        : "Zyra",
@@ -202,7 +202,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 6,
-        source: "/media/icons/q6.webp",
+        source: "media/icons/q6.webp",
         answers: {
         a        : "Thresh",
         b        : "Mordekaiser",
@@ -212,7 +212,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 7,
-        source: "/media/icons/q7.webp",
+        source: "media/icons/q7.webp",
         answers: {
         a        : "Lissandra",
         b        : "Ashe",
@@ -222,7 +222,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 8,
-        source: "/media/icons/q8.webp",
+        source: "media/icons/q8.webp",
         answers: {
         a        : "Zoe",
         b        : "Soraka",
@@ -232,7 +232,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 9,
-        source: "/media/icons/q9.webp",
+        source: "media/icons/q9.webp",
         answers: {
         a        : "Sion",
         b        : "Darius",
@@ -242,7 +242,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 10,
-        source: "/media/icons/q10.webp",
+        source: "media/icons/q10.webp",
         answers: {
         a        : "Rammus",
         b        : "Malphite",
@@ -255,7 +255,7 @@ const ICON_ANSWERS = [
 
 const VOICELINE_ANSWERS = [
     {question: 1,
-        source: "/media/voiceline/q1.ogg",
+        source: "media/voiceline/q1.ogg",
         answers: {
             a        : "Thresh",
             b        : "Volibear",
@@ -265,7 +265,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 2,
-        source: "/media/voiceline/q2.ogg",
+        source: "media/voiceline/q2.ogg",
         answers: {
             a        : "Camille",
             b        : "Caitlyn",
@@ -275,7 +275,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 3,
-        source: "/media/voiceline/q3.ogg",
+        source: "media/voiceline/q3.ogg",
         answers: {
             a        : "Hecarim",
             b        : "Thresh",
@@ -285,7 +285,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 4,
-        source: "/media/voiceline/q4.ogg",
+        source: "media/voiceline/q4.ogg",
         answers: {
             a        : "Pyke",
             b        : "Shaco",
@@ -295,7 +295,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 5,
-        source: "/media/voiceline/q5.ogg",
+        source: "media/voiceline/q5.ogg",
         answers: {
             a        : "Xayah",
             b        : "Sejuani",
@@ -305,7 +305,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 6,
-        source: "/media/voiceline/q6.ogg",
+        source: "media/voiceline/q6.ogg",
         answers: {
             a        : "Samira",
             b        : "Nilah",
@@ -315,7 +315,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 7,
-        source: "/media/voiceline/q7.ogg",
+        source: "media/voiceline/q7.ogg",
         answers: {
             a        : "Rell",
             b        : "Poppy",
@@ -325,7 +325,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 8,
-        source: "/media/voiceline/q8.ogg",
+        source: "media/voiceline/q8.ogg",
         answers: {
             a        : "Graves",
             b        : "Malphite",
@@ -335,7 +335,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 9,
-        source: "/media/voiceline/q9.ogg",
+        source: "media/voiceline/q9.ogg",
         answers: {
             a        : "Thresh",
             b        : "Veigar",
@@ -345,7 +345,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 10,
-        source: "/media/voiceline/q10.ogg",
+        source: "media/voiceline/q10.ogg",
         answers: {
             a        : "Trundle",
             b        : "Draven",
