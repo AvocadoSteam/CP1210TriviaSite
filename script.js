@@ -4,7 +4,6 @@ const $ = selector => document.querySelector(selector);
 const CreatingQuestionListing = () => {
     let questionList = []; // place to add questions
     let count = 4; // 12 questions to choose
-    //TODO put values inside of VOICELINE and ABILITY answers
 
     for (let i = 0; i < count; i++) { // adds icon answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
@@ -25,7 +24,6 @@ const CreatingQuestionListing = () => {
             i--;
         }
     }
-
     count = 4;
     for (let i = 0; i < count; i++) { // adds ability answers
         let randomSelection = Math.floor(Math.random() * 10); // select out of 10 questions
@@ -35,39 +33,55 @@ const CreatingQuestionListing = () => {
         } else {
             i--;
         }
-
     }
-
     return questionList;
 }
 
-const updateQuestion = () => {
+// updates Images, and hides/displays voicelines/ability names
+const updateQuestionImage = () => {
     questionList.shift();
     if(questionCount < 4){
         document.getElementById("sourceImage").src=questionList[0].source;
-        console.log("Log4!")
     }
     if(questionCount >= 4 && questionCount < 8){
         document.getElementById("sourceImage").className = "hidden";
         document.getElementById("sourceVoiceline").className = "";
-        //document.getElementById("sourceVoiceline").src=questionList[4].source;
         $("#question").textContent="What champ has this voiceline?";
-        console.log("Log8!")
-
     }
-    if(questionCount >=8 && questionCount < 12){
+    if(questionCount >= 8 && questionCount < 13){
         document.getElementById("sourceVoiceline").className = "hidden";
         document.getElementById("sourceAbility").className = "";
-        //document.getElementById("sourceAbility").src=questionList[7].source;
         $("#question").textContent="What champ has this ability name?";
-        console.log("Log12!")
-
     }
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
 
+    return questionList;
+}
+
+// used to update the champion voicelines
+const updateQuestionVoiceline = () => {
+    questionList.shift();
+    document.getElementById("question").textContent="What champion has this voiceline?";
+    document.getElementById("sourceVoiceline").src=questionList[0].source;
+    $("#A").textContent=questionList[0].answers.a;
+    $("#B").textContent=questionList[0].answers.b;
+    $("#C").textContent=questionList[0].answers.c;
+    $("#D").textContent=questionList[0].answers.d;
+    return questionList;
+}
+
+// used to update Ability Name text
+const updateQuestionAbility = () => {
+    questionList.shift();
+    document.getElementById("question").textContent="What champion has this ability name?";
+    document.getElementById("sourceAbility").textContent=questionList[0].source;
+    $("#A").textContent=questionList[0].answers.a;
+    $("#B").textContent=questionList[0].answers.b;
+    $("#C").textContent=questionList[0].answers.c;
+    $("#D").textContent=questionList[0].answers.d;
     return questionList;
 }
 
@@ -75,67 +89,100 @@ const updateQuestion = () => {
 Adds +1 to number of guesses
  */
 const keepScore = () => {
-    questionCount++;
-    $("#score").textContent=correctGuesses + " / " + questionCount;
+    if (questionCount === 12) {
+        alert("Congratulations! You scored " + correctGuesses + " / " + questionCount);
+    } else {
+        questionCount++;
+    }
 }
 
 /*
 Runs once a button is clicked
  */
 const validateAnswer = () => {
-    if (questionCount < 13) {
-        updateQuestion();
+    if (questionCount < 4) {
+        updateQuestionImage();
+    }
+    if (questionCount < 8 && 4 <= questionCount ) {
+        document.getElementById("sourceImage").classList.add("hidden");
+        document.getElementById("sourceVoiceline").classList.remove("hidden");
+        updateQuestionVoiceline();
+    }
+    if (questionCount < 12 && 8 <= questionCount) {
+        document.getElementById("sourceVoiceline").classList.add("hidden");
+        document.getElementById("sourceAbility").classList.remove("hidden");
+        updateQuestionAbility();
     }
     keepScore();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("sourceImage").src=questionList[0].source;
-
-    $("#question").textContent="What champ has this ability icon?";
+    $("#question").textContent="What champion has this ability icon?";
     $("#A").textContent=questionList[0].answers.a;
     $("#B").textContent=questionList[0].answers.b;
     $("#C").textContent=questionList[0].answers.c;
     $("#D").textContent=questionList[0].answers.d;
-    $("#score").textContent=correctGuesses + " / " + questionCount;
-
+    // $("#score").textContent=correctGuesses + " / " + questionCount;
     $("#choices").addEventListener("click", validateAnswer);
 
 
     $("#A").addEventListener("click", (evt) => { // these are tests
         if ($("#A").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
 
     $("#B").addEventListener("click", (evt) => {
         if ($("#B").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
 
     $("#C").addEventListener("click", (evt) => {
         if ($("#C").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
 
     $("#D").addEventListener("click", (evt) => {
         if ($("#D").textContent === questionList[0].answers.answer) {
             correctGuesses++;
+            document.getElementById("score").textContent="Correct!";
+            document.getElementById("score").classList.add("correct");
+            document.getElementById("score").classList.remove("incorrect");
+        } else {
+            document.getElementById("score").textContent="Incorrect!";
+            document.getElementById("score").classList.add("incorrect");
+            document.getElementById("score").classList.remove("correct");
         }
     });
-
-
-    console.log(Object.values(questionList));
-    console.log(Object.values(ICON_ANSWERS));
-    console.log(questionList[0].answers)
-
 })
 
 const ICON_ANSWERS = [
     {question: 1,
-        source: "/media/icons/q1.webp",
+        source: "media/icons/q1.webp",
         answers: {
         a        : "Annie",
         b        : "Renekton",
@@ -145,7 +192,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 2,
-        source: "/media/icons/q2.webp",
+        source: "media/icons/q2.webp",
         answers: {
         a        : "Skarner",
         b        : "Darius",
@@ -155,7 +202,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 3,
-        source: "/media/icons/q3.webp",
+        source: "media/icons/q3.webp",
         answers: {
         a        : "Kaisa",
         b        : "Zeri",
@@ -165,7 +212,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 4,
-        source: "/media/icons/q4.webp",
+        source: "media/icons/q4.webp",
         answers: {
         a        : "Rek'sai",
         b        : "Kassadin",
@@ -175,7 +222,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 5,
-        source: "/media/icons/q5.webp",
+        source: "media/icons/q5.webp",
         answers: {
         a        : "Ivern",
         b        : "Zyra",
@@ -185,7 +232,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 6,
-        source: "/media/icons/q6.webp",
+        source: "media/icons/q6.webp",
         answers: {
         a        : "Thresh",
         b        : "Mordekaiser",
@@ -195,7 +242,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 7,
-        source: "/media/icons/q7.webp",
+        source: "media/icons/q7.webp",
         answers: {
         a        : "Lissandra",
         b        : "Ashe",
@@ -205,7 +252,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 8,
-        source: "/media/icons/q8.webp",
+        source: "media/icons/q8.webp",
         answers: {
         a        : "Zoe",
         b        : "Soraka",
@@ -215,7 +262,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 9,
-        source: "/media/icons/q9.webp",
+        source: "media/icons/q9.webp",
         answers: {
         a        : "Sion",
         b        : "Darius",
@@ -225,7 +272,7 @@ const ICON_ANSWERS = [
         }
     },
     {question: 10,
-        source: "/media/icons/q10.webp",
+        source: "media/icons/q10.webp",
         answers: {
         a        : "Rammus",
         b        : "Malphite",
@@ -238,7 +285,7 @@ const ICON_ANSWERS = [
 
 const VOICELINE_ANSWERS = [
     {question: 1,
-        source: "/media/voiceline/q1.ogg",
+        source: "media/voiceline/q1.ogg",
         answers: {
             a        : "Thresh",
             b        : "Volibear",
@@ -248,7 +295,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 2,
-        source: "/media/voiceline/q2.ogg",
+        source: "media/voiceline/q2.ogg",
         answers: {
             a        : "Camille",
             b        : "Caitlyn",
@@ -258,7 +305,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 3,
-        source: "/media/voiceline/q3.ogg",
+        source: "media/voiceline/q3.ogg",
         answers: {
             a        : "Hecarim",
             b        : "Thresh",
@@ -268,7 +315,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 4,
-        source: "/media/voiceline/q4.ogg",
+        source: "media/voiceline/q4.ogg",
         answers: {
             a        : "Pyke",
             b        : "Shaco",
@@ -278,7 +325,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 5,
-        source: "/media/voiceline/q5.ogg",
+        source: "media/voiceline/q5.ogg",
         answers: {
             a        : "Xayah",
             b        : "Sejuani",
@@ -288,7 +335,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 6,
-        source: "/media/voiceline/q6.ogg",
+        source: "media/voiceline/q6.ogg",
         answers: {
             a        : "Samira",
             b        : "Nilah",
@@ -298,7 +345,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 7,
-        source: "/media/voiceline/q7.ogg",
+        source: "media/voiceline/q7.ogg",
         answers: {
             a        : "Rell",
             b        : "Poppy",
@@ -308,7 +355,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 8,
-        source: "/media/voiceline/q8.ogg",
+        source: "media/voiceline/q8.ogg",
         answers: {
             a        : "Graves",
             b        : "Malphite",
@@ -318,7 +365,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 9,
-        source: "/media/voiceline/q9.ogg",
+        source: "media/voiceline/q9.ogg",
         answers: {
             a        : "Thresh",
             b        : "Veigar",
@@ -328,7 +375,7 @@ const VOICELINE_ANSWERS = [
         }
     },
     {question: 10,
-        source: "/media/voiceline/q10.ogg",
+        source: "media/voiceline/q10.ogg",
         answers: {
             a        : "Trundle",
             b        : "Draven",
@@ -341,93 +388,103 @@ const VOICELINE_ANSWERS = [
 
 const ABILITY_ANSWERS = [
     {question: 1,
+        source: "Feast",
         answers: {
-            a        : "a",
-            b        : "Va",
-            c        : "Ae",
-            d        : "a",
-            answer   : "Ae"
+            a        : "Cho'gath",
+            b        : "Dr. Mundo",
+            c        : "Vladimir",
+            d        : "Aatrox",
+            answer   : "Cho'gath"
         }
     },
     {question: 2,
+        source: "Neurotoxin",
         answers: {
-            a        : "a",
-            b        : "Caan",
-            c        : "aora",
-            d        : "Ean",
-            answer   : "Caan"
+            a        : "Teemo",
+            b        : "Singed",
+            c        : "Elise",
+            d        : "Casseopia",
+            answer   : "Elise"
         }
     },
     {question: 3,
+        source: "Prophet of an Elder God",
         answers: {
-            a        : "Ham",
-            b        : "Tash",
-            c        : "ack",
-            d        : "Moaer",
-            answer   : "Ham"
+            a        : "Anivia",
+            b        : "Illaoi",
+            c        : "Ornn",
+            d        : "Volibear",
+            answer   : "Illaoi"
         }
     },
     {question: 4,
+        source: "Eye of the Storm",
         answers: {
-            a        : "ae",
-            b        : "a",
-            c        : "Ja",
-            d        : "an",
-            answer   : "Ja"
+            a        : "Kayn",
+            b        : "Kalista",
+            c        : "Jinx",
+            d        : "Janna",
+            answer   : "Janna"
         }
     },
     {question: 5,
+        source: "Lilting Lullaby",
         answers: {
-            a        : "Xah",
-            b        : "Sai",
-            c        : "Kaa",
-            d        : "aa",
-            answer   : "aa"
+            a        : "Xayah",
+            b        : "Zoe",
+            c        : "Lulu",
+            d        : "Lillia",
+            answer   : "Lillia"
         }
     },
     {question: 6,
+        source: "Wither",
         answers: {
-            a        : "Saa",
-            b        : "Nia",
-            c        : "Saa",
-            d        : "ae",
-            answer   : "Saa"
+            a        : "Ryze",
+            b        : "Nasus",
+            c        : "Rammus",
+            d        : "Mordekaiser",
+            answer   : "Nasus"
         }
     },
     {question: 7,
+        source: "Heroic Charge",
         answers: {
-            a        : "Ra",
-            b        : "Pay",
-            c        : "Qana",
-            d        : "a",
-            answer   : "Pay"
+            a        : "Kled",
+            b        : "Sion",
+            c        : "Poppy",
+            d        : "Shen",
+            answer   : "Poppy"
         }
     },
     {question: 8,
+        source: "Break the Mold",
         answers: {
-            a        : "a",
-            b        : "a",
-            c        : "a",
-            d        : "a",
-            answer   : "a"
+            a        : "Ivern",
+            b        : "Leona",
+            c        : "Rell",
+            d        : "Diana",
+            answer   : "Rell"
         }
     },
     {question: 9,
+        source: "The Equalizer",
         answers: {
-            a        : "a",
-            b        : "a",
-            c        : "a",
-            d        : "a",
-            answer   : "a"
+            a        : "Rumble",
+            b        : "Sett",
+            c        : "Shaco",
+            d        : "Skarner",
+            answer   : "Rumble"
         }
     },
     {question: 10,
+        source: "Time Warp",
         answers: {
-            a        : "a",
-            b        : "a",
-            c        : "a",
-            d        : "a",
-            answer   : "a"
+            a        : "Ekko",
+            b        : "Zilean",
+            c        : "Xerath",
+            d        : "Veigar",
+            answer   : "Zilean"
         }
     }
 ]
